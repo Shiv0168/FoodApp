@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const CheckoutPage1 = () => {
 
@@ -8,6 +8,7 @@ const CheckoutPage1 = () => {
   const [coke, setcoke] = useState(0)
   const [fries, setfries] = useState(0)
 
+  const nav = useNavigate();
 
   const increaseQuantityHamburger = () => {
     if (hamburger >= 0) {
@@ -55,6 +56,9 @@ const CheckoutPage1 = () => {
     }
   }
 
+  const final = () => {
+    nav("/result");
+  }
 
   return (
     <div className='container my-5'>
@@ -134,7 +138,7 @@ const CheckoutPage1 = () => {
               </table>
             </div>
             <div className="modal-footer">
-              <Link to="/result" type="button" className="btn btn-outline-primary" data-dismiss="modal">SAVE AND CHECKOUT</Link>
+              <button onClick={final} type="button" className="btn btn-outline-primary" data-dismiss="modal">SAVE AND CHECKOUT</button>
               <button type="button" className="btn btn-outline-secondary" data-dismiss="modal">CANCEL</button>
             </div>
           </div>
