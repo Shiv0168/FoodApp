@@ -72,48 +72,69 @@ const CheckoutPage1 = () => {
               </button>
             </div>
             <div className="modal-body">
-              <div className="row">
-                <div className="col">
-                  <div>
-                    Coke:
-                    <span style={{ marginLeft: "70px", marginRight: "30px" }}>{coke}</span>
-                    <button className="btn btn-primary" onClick={increaseQuantitycole} >+</button>
-                    <button className="btn btn-secondary" onClick={decreaseQuantitycoke}>-</button>
-                  </div>
-                  <br />
-                  <div>
-                    Fries:
-                    <span style={{ marginLeft: "70px", marginRight: "30px" }}>{fries}</span>
-                    <button className="btn btn-primary" onClick={increaseQuantityfries} >+</button>
-                    <button className="btn btn-secondary" onClick={decreaseQuantityfries}>-</button>
-                  </div>
-                  <br />
-                  <div>
-                    Pepsi:
-                    <span style={{ marginLeft: "60px", marginRight: "30px" }}>{pepsi}</span>
-                    <button className="btn btn-primary" onClick={increaseQuantitypepsi} >+</button>
-                    <button className="btn btn-secondary" onClick={decreaseQuantitypepsi}>-</button>
-                  </div>
-                  <br />
-                  <div>
-                    Hamburger:
-                    <span style={{ marginLeft: "30px", marginRight: "20px" }}>{hamburger}</span>
-                    <button className="btn btn-primary" onClick={increaseQuantityHamburger} >+</button>
-                    <button className="btn btn-secondary" onClick={decreaseQuantityHamburger}>-</button>
-                  </div>
-                  <br />
-                  <div>
-                    Total (INR):
-                    <span style={{ marginLeft: "5vw" }}>{coke * 50 + fries * 100 + pepsi * 50 + hamburger * 200}</span>
-                  </div>
-                </div>
-                <div className='col' >
 
-                </div>
-              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order Summary</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Coke : </th>
+                    <td>{coke}</td>
+                    <td>
+                      <div >
+                        <button className="btn btn-primary" onClick={increaseQuantitycole}>+</button>
+                        <button className="btn btn-secondary mx-2" onClick={decreaseQuantitycoke}>-</button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">Pepsi : </th>
+                    <td>{pepsi}</td>
+                    <td>
+                      <div >
+                        <button className="btn btn-primary" onClick={increaseQuantitypepsi}>+</button>
+                        <button className="btn btn-secondary mx-2" onClick={decreaseQuantitypepsi}>-</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Hamburger : </th>
+                    <td>{hamburger}</td>
+                    <td>
+                      <div >
+                        <button className="btn btn-primary" onClick={increaseQuantityHamburger}>+</button>
+                        <button className="btn btn-secondary mx-2" onClick={decreaseQuantityHamburger}>-</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fries : </th>
+                    <td>{fries}</td>
+                    <td>
+                      <div >
+                        <button className="btn btn-primary" onClick={increaseQuantityfries}>+</button>
+                        <button className="btn btn-secondary mx-2" onClick={decreaseQuantityfries}>-</button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">Total (INR) : </th>
+                    <td><span style={{ marginLeft: "5vw" }}>{coke * 50 + fries * 100 + pepsi * 50 + hamburger * 200}</span></td>
+                    <td>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div className="modal-footer">
-              <Link to="/result" type="button" className="btn btn-outline-primary">SAVE AND CHECKOUT</Link>
+              <Link to="/result" type="button" className="btn btn-outline-primary" data-dismiss="modal">SAVE AND CHECKOUT</Link>
               <button type="button" className="btn btn-outline-secondary" data-dismiss="modal">CANCEL</button>
             </div>
           </div>
